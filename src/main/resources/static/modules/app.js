@@ -1,5 +1,5 @@
 angular
-    .module('app', ['ngRoute', 'ngCookies', 'ngResource'])
+    .module('app', ['ngRoute', 'ngCookies', 'ngResource', 'slidingPuzzle', 'ui-notification'])
     .factory('XSRFInterceptor', [ '$cookies', '$log', function ($cookies, $log) {
 
         var XSRFInterceptor = {
@@ -33,6 +33,10 @@ angular
             .when('/course/:courseId', {
                 templateUrl: '/modules/course/show.tpl.html',
                 controller: 'CourseCtrl'
+            })
+            .when('/create-challenge', {
+                templateUrl: '/modules/challenge/create.tpl.html',
+                controller: 'ChallengeCtrl'
             })
             .otherwise({
                 redirectTo: '/'
